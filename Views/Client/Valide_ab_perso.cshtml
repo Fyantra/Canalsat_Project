@@ -1,0 +1,69 @@
+@using MyApp.Models;
+@{
+    var client = ViewData["client"] as Client;
+    var chaines = ViewData["chaines"] as List<MyApp.Models.Chaine>;
+    var remise = 0;
+    int tailleListeChaine = chaines.Count;
+
+}
+    @if(tailleListeChaine >= 6){
+        remise = 6;
+    }
+
+<h2><strong><span style="color: rgb(205, 179, 50);">@client.nom</span></strong></h2>
+<h3><strong>Région <span style="color: rgb(50, 109, 205);">@client.region.description</span> - % reception signal
+        @client.region.t_reception_signal</strong></h3>
+<div class="limiter">
+    <h2>Résumé de votre abonnement personnel</h2>
+</div>
+<div class="limiter">
+    <table class="table table-borderless table-hover">
+        <thead>
+            <tr>
+                <th>Chaines</th>
+                <th>Prix</th>
+                <th>Remise</th>
+                <th>Prix remisé</th>
+                <th>Signal</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var chaine in @chaines)
+            {
+                <tr>
+                    <td>
+                        <p class="mb-0">
+                            @chaine.description
+                        </p>
+                    </td>
+                    <td>
+                        <p class="mb-0">
+                            @chaine.prix
+                        </p>
+                    </td>
+                    <td>
+                        
+                        <p class="mb-0">
+                            @remise %
+                        </p>
+                        
+                    </td>
+                    <td>
+                        <p class="mb-0">
+                            @chaine.prix
+                        </p>
+                    </td>
+                    <td>
+                        <p class="mb-0">
+                            @chaine.signal
+                        </p>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<div class="limiter">
+    <a class="nav-link text-dark" asp-area="" asp-controller="Client" asp-action="Detail"
+        asp-route-id="@client.id"><button class="btn btn-primary">Retour</button></a>
+</div>

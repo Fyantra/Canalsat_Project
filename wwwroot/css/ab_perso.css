@@ -1,0 +1,27 @@
+#chaines {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+#input {
+    margin-top: 8%;
+}
+
+#detail {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+#contenu_chaine {
+    border: solid 1px rgb(108, 106, 106);
+    border-radius: 10px;
+    height: 12vh;
+    margin: 10px 10px;
+}
+
+#contenu_chaine:hover {
+    background-color: rgb(197, 241, 255);
+    transition: 1s;
+}

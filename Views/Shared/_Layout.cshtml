@@ -1,0 +1,202 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <meta name="copyright" content="MACode ID, https://macodeid.com/">
+
+  <title>Canalsat</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/canalsat.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/simplebar.css">
+    <!-- template -->
+    <!-- Fonts CSS -->
+    
+    <!-- Icons CSS -->
+    <link rel="stylesheet" href="~/css/feather.css">
+    <link rel="stylesheet" href="~/css/dataTables.bootstrap4.css">
+    <!-- Date Range Picker CSS -->
+    <link rel="stylesheet" href="~/css/daterangepicker.css">
+    <!-- App CSS -->
+    <link rel="stylesheet" href="~/css/app-light.css" id="lightTheme">
+    <link rel="stylesheet" href="~/css/app-dark.css" id="darkTheme" disabled>
+    <!-- fin template -->
+    <link rel="stylesheet" href="~/css/ab_perso.css">
+
+  <link rel="stylesheet" href="~/assets/css/maicons.css" asp-append-version="true">
+
+  <link rel="stylesheet" href="~/assets/css/bootstrap.css" asp-append-version="true">
+
+  <link rel="stylesheet" href="~/assets/vendor/animate/animate.css" asp-append-version="true">
+
+  <link rel="stylesheet" href="~/assets/css/theme.css" asp-append-version="true">
+
+</head>
+
+<body>
+    <div class="back-to-top"></div>
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky" data-offset="500">
+      <div class="container">
+        <a href="#" class="navbar-brand">CANAL<span class="text-primary">SAT</span></a>
+
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="navbar-collapse collapse" id="navbarContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" asp-area="" asp-controller="Client" asp-action="Index">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" asp-area="" asp-controller="Client" asp-action="Index">Clients</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" asp-area="" asp-controller="Client" asp-action="Modif_remise">Remise</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" asp-area="" asp-controller="Client" asp-action="listeBouquet">Liste_Bouquet</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" asp-area="" asp-controller="Client" asp-action="contact">Contact</a>
+            </li>
+            
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="page-banner home-banner" style="height: 400px;">
+        <div class="row align-items-center flex-wrap-reverse h-100" >
+          <div class="col-md-6 py-5 wow fadeInLeft">
+            <h1 class="mb-4">Bienvenue sur le site web de gestion de Canal+ ! </h1>
+            <p class="text-lg text-grey mb-5">Cette plateforme en ligne a été spécialement conçue pour vous permettre de gérer votre abonnement et votre contenu en toute simplicité.</p>
+            <a href="#" class="btn btn-primary btn-split">Watch Video <div class="fab"><span class="mai-play"></span></div></a>
+          </div>
+          <div class="col-md-6 py-5 wow zoomIn">
+            <div class="img-fluid text-center">
+              <img src="~/assets/img/canal.PNG" alt="" width="330px" height="300px">
+            </div>
+          </div>
+        </div>
+        <a href="#about" class="btn-scroll" data-role="smoothscroll"><span class="mai-arrow-down"></span></a>
+      </div>
+    </div>
+  </header>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="page-footer bg-image" style="background-image: url(~/assets/img/world_pattern.svg);">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-lg-3 py-3">
+          <h3>Canalsat</h3>
+          <p> Connectez-vous dès maintenant pour profiter de toutes les fonctionnalités offertes par notre site web de gestion de CanalSat !</p>
+
+          <div class="social-media-button">
+            <a href="#"><span class="mai-logo-facebook-f"></span></a>
+            <a href="#"><span class="mai-logo-twitter"></span></a>
+            <a href="#"><span class="mai-logo-google-plus-g"></span></a>
+            <a href="#"><span class="mai-logo-instagram"></span></a>
+            <a href="#"><span class="mai-logo-youtube"></span></a>
+          </div>
+        </div>
+        <div class="col-lg-3 py-3">
+          <h5>Company</h5>
+          <ul class="footer-menu">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Career</a></li>
+            <li><a href="#">Advertise</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Help & Support</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 py-3">
+          <h5>Contact Us</h5>
+          <p>102 Antananarivo atsimondrano, Tanjombato, Andoharanofotsy</p>
+          <a href="#" class="footer-link">+00 1122 3344 5566</a>
+          <a href="#" class="footer-link">canalsat@gmail.com</a>
+        </div>
+        <div class="col-lg-3 py-3">
+          <h5>Newsletter</h5>
+          <p>Get updates, news or events on your mail.</p>
+          <form action="#">
+            <input type="text" class="form-control" placeholder="Enter your email..">
+            <button type="submit" class="btn btn-success btn-block mt-2">Subscribe</button>
+          </form>
+        </div>
+      </div>
+
+      <p class="text-center" id="copyright">Copyright &copy; 2020. This template design and develop by <a asp-area="" asp-controller="Home" asp-action="Privacy">MACode ID</a></p>
+    </div>
+  </footer>
+
+    
+    
+    <script src="~/assets/js/jquery-3.5.1.min.js"></script>
+
+    <script src="~/assets/js/bootstrap.bundle.min.js"></script>
+
+    <script src="~/assets/js/google-maps.js"></script>
+
+    <script src="~/assets/vendor/wow/wow.min.js"></script>
+
+    <script src="~/assets/js/theme.js"></script>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <!-- template -->
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/popper.min.js"></script>
+    <script src="~/js/moment.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/simplebar.min.js"></script>
+    <script src='~/js/daterangepicker.js'></script>
+    <script src='~/js/jquery.stickOnScroll.js'></script>
+    <script src="~/js/tinycolor-min.js"></script>
+    <script src="~/js/config.js"></script>
+    <script src='~/js/jquery.dataTables.min.js'></script>
+    <script src='~/js/dataTables.bootstrap4.min.js'></script>
+    <script>
+        $('#dataTable-1').DataTable(
+            {
+                autoWidth: true,
+                "lengthMenu": [
+                    [16, 32, 64, -1],
+                    [16, 32, 64, "All"]
+                ]
+            });
+    </script>
+    <script src="~/js/apps.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-56159088-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-56159088-1');
+    </script>
+    
+    <!-- fin template -->
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+@using MyApp.Models;
+@{
+    var chainesDispo = ViewData["chainesDispo"] as List<MyApp.Models.Chaine>;
+    var client = ViewData["client"] as Client;
+    var abEnCours = ViewData["abEnCours"] as Abonnement;
+}
+
+<link rel="stylesheet" href="~/css/style.css" type="text/css">
+
+<div class="row">
+    <p class="mb-2">
+    <h2><strong><span style="color: rgb(205, 179, 50);">@client.nom</span></strong></h2>
+    <div class="tableau">
+        <table>
+            <thead>
+                <tr>
+                    
+                    <th style="color: rgb(50, 109, 205);">Region</th>
+                    <th>reception signal(%)</th>
+                    <th style="color: yellowgreen;">Abonnement en cours</th>
+                    <th style="color: rgb(205, 50, 205);">Prix remisé</th>
+                    
+                    
+                </tr>
+            </thead>
+            <tbody>
+                
+                <tr>
+                    <td style="color: rgb(50, 109, 205);">@client.region.description</td>
+                    <td>@client.region.t_reception_signal</td>
+                    @if (abEnCours != null)
+                    {
+                    <td tyle="color: yellowgreen;">@abEnCours.description</td>
+                    <td style="color: rgb(205, 50, 205);">@abEnCours.getPrixRemise() Ar</td>
+                    }
+
+                    else{
+                        <td style="color: yellowgreen;">Pas d'abonnement pour le moment</td>
+                        <td style="color: rgb(205, 50, 205);">Aucun prix remisé pour le moment</td>
+                    }
+                    
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+    </p>
+    <div class="col-md-12 mb-4">
+        <div class="card shadow">
+            <div class="card-body">
+                <form asp-action="Valide_ab_perso">
+                    <h3><strong>Bouquet personnalisé</strong></h3>
+                    <h4><strong>Total 0 Ar</strong></h4>
+                    <div class="form-group mb-3 col-md-4">
+                        <label for="simpleinput">Nom de votre bouquet</label>
+                        <input type="text" id="simpleinput" class="form-control" name="descri_ab_perso" required>
+                    </div>
+                    <p class="mb-2"><strong>Selectionnez vos chaines</strong></p>
+                    <div id="chaines">
+                        @foreach (Chaine cDispo in chainesDispo)
+                        {
+                            <div id="contenu_chaine" class="custom-control custom-checkbox col-md-3">
+                                <div id="input">
+                                    <input type="checkbox" id="check" name="chaines" value="@cDispo.id">
+                                    <label for="chaines"><strong>@cDispo.description</strong></label>
+                                </div>
+                                <div id="detail">
+                                    <div class="prix">prix @cDispo.prix Ar</div>
+                                    <div class="signal">signal @cDispo.signal</div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                    <input type="hidden" name="idclient" value="@client.id">
+                    <div id="submit"><button class="btn btn-primary" type="submit">valider</button></div>
+                    
+                </form>
+                <div class="limiter">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Client" asp-action="Detail"
+                            asp-route-id="@client.id"><button class="btn btn-primary">Retour</button></a>
+                </div> <!-- / .card-body -->
+            </div>
+        </div> <!-- / .card -->
+    </div>
+</div>

@@ -1,0 +1,25 @@
+@using MyApp.Models;
+@{
+    var allAB = ViewData["allAB"] as List<Abonnement>;
+}
+
+<table class="table table-borderless table-hover">
+    <tbody>
+        @foreach (var abonnement in allAB)
+        {
+            <tr>
+                <td>
+
+                    <p class="mb-0 text-muted"><strong>
+                            @abonnement.description
+                        </strong></p>
+                </td>
+                <td>
+                    <p class="mb-0 text-muted"><strong>
+                            @abonnement.remise.remise
+                        </strong></p>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

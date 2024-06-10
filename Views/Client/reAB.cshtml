@@ -1,0 +1,24 @@
+@{
+    var abonnements = ViewData["abs"] as List<MyApp.Models.Abonnement>;
+}
+
+
+<div class="limiter">
+    <div class="container-login100" style="background-image: url('images/bg-01.jpg');">
+        <div class="wrap-login100 p-l-110 p-r-110 p-t-62 p-b-33">
+            <form class="login100-form validate-form flex-sb flex-w">
+                <span class="login100-form-title p-b-53">
+                    Réabonnez-vous
+                </span>
+                @foreach (var ab in @abonnements)
+                {
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Client" asp-action="Index">
+                        @ab.description
+                    </a>
+                }
+                <a class="nav-link text-dark" asp-area="" asp-controller="Client" asp-action="Index"> Bouquet personnalisé
+                </a>
+            </form>
+        </div>
+    </div>
+</div>

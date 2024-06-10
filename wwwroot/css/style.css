@@ -1,0 +1,133 @@
+.voir {
+    font-size: small;
+    font-weight: bold;
+    border : solid 0.5px rgb(91, 214, 192) ;
+    border-radius: 20px;
+    width: 130px;
+    height: 32px;
+    text-align: center;
+    margin-inline-start: 44px;
+    padding-right : 5px;
+    padding-top: 5px;
+}
+
+/*.reserver a {
+    color: rgb(91, 214, 192) ;
+}*/
+
+button:active{
+    border: 2px solid #f2f2f2;
+    transition: border 0.5s ease;
+}
+button:hover{
+    background-color: rgb(229, 32, 14);
+}
+
+table {
+    border-collapse: collapse;
+    width: 80%;
+    margin-bottom: 1rem;
+    margin-left: 3%;
+   }
+   
+   thead th {
+    text-align: center;
+    background-color: #F5F5F5;
+    font-weight: bold;
+    padding: 10px;
+    border-bottom: 2px solid #ddd;
+  }
+  
+  td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+  }
+  
+  tr:hover {
+    background-color: #f5f5f5;
+  }
+  
+  tr:nth-child(even):hover {
+    background-color: #e3e3e3;
+  }
+  
+  tr:nth-child(odd):hover {
+    background-color: #e3e3e3;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  tr:nth-child(odd) {
+    background-color: #f9f9f9;
+  }
+  
+  td:nth-child(1) {
+    animation: fadeInLeft 1s ease-in;
+  }
+  
+  td:nth-child(2) {
+    animation: fadeInUp 1s ease-in;
+  }
+  
+  td:nth-child(3) {
+    animation: fadeInRight 1s ease-in;
+  }
+  
+  td:nth-child(4) {
+    animation: fadeInRight 1s ease-in;
+  }
+
+  
+  @keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .description a
+{
+    display: flex;
+
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: grey 2px 2px 2px;
+    transition: 1s;
+}
+
+.description a:hover
+{
+    background-color: #9eacb7;
+    color: white;
+    height: 200px;
+ 
+}
